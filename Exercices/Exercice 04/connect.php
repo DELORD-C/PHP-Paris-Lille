@@ -2,7 +2,10 @@
 
 session_start();
 
-if (!empty($_POST) && $_POST['email'] == 'admin@aol.fr' && $_POST['mdp'] == 'admin') {
+if (!empty($_POST)) {
+/////////////////
+    //CODE
+/////////////////
     $_SESSION['connected'] = 'true';
     if (!empty($_COOKIE['lastConnect'])) {
         $lastConnect = $_COOKIE['lastConnect'];

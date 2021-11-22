@@ -14,5 +14,3 @@
 3. À chaque fois que l'utilisateur se connecte, on stocke la date (ou le timestamp) correspondant au moment ou il se connect (time()) dans un cookie
 
 4. Lorsque l'utilisateur est connecté, en plus du 'Bonjour', on affiche la date de la dernière connection (avant de remplacer le cookie).
-
-Bonus : Lorsque l'utilisateur se trompe de mdp ou essaye d'acceder à `connect.php` sans etre connecté, afficher un message d'erreur au dessus du formulaire de connection.
