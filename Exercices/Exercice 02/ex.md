@@ -1,12 +1,10 @@
-# Exercice 1
+# Exercice 2
 
-1. Créer un `index.php` avec une structure html de base
-2. Ajouter dans celui-ci un formulaire POST pour créer un utilisateur qui contiendra les champs :
-   - Nom
-   - Prénom
-   - Téléphone
-   - Email
-   - Envoyer (bouton submit)
+Ecrire une fonction qui prend un paramètre (nombre entier), qui retourne une chaîne de caractères contenant X fois le nombre 8, X étant le nombre passé en paramètre de la fonction
 
-3. Faites en sorte que le formulaire soit envoyé sur la page `create.php`, que vous créerez par la suite
-4. Dans `create.php`, afficher les données du formulaire envoyé.
+Exemple :
+```php
+<?php
+returnHuit(5); // Affiche 88888
+returnHuit(10); // Affiche 8888888888
+```
