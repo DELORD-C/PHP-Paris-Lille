@@ -11,7 +11,7 @@
      - si on a une variable de session alors on affiche Bonjour
      - Dans tous les autres cas on redirige l'utilisateur vers `index.php`
 
-3. À chaque fois que l'utilisateur se connecte, on stocke la date (ou le timestamp) correspondant au moment ou il se connect (time())
+3. À chaque fois que l'utilisateur se connecte, on stocke la date (ou le timestamp) correspondant au moment ou il se connect (time()) dans un cookie
 
 4. Lorsque l'utilisateur est connecté, en plus du 'Bonjour', on affiche la date de la dernière connection (avant de remplacer le cookie).
 
