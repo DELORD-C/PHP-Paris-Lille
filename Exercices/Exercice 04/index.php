@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+
+    if (!empty($_GET['error'])) {
+        echo '<span>' . $_GET['error'] . '</span>';
+    }
+
+    ?>
     <form action="connect.php" method='post'>
         <input type="text" name="email" placeholder="email">
         <input type="password" name="mdp" placeholder="mdp">
