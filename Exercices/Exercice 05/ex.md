@@ -1,5 +1,5 @@
 # Exercice 5
-1. Créer une table voiture qui contiendra les colonnes suivantes :
+1. Créer une table voitures qui contiendra les colonnes suivantes :
 - id INT auto incrementation
 - immatriculation VARCHAR 20
 - marque VARCHAR 20
@@ -15,7 +15,7 @@
 - numero VARCHAR 10
 - telephone VARCHAR 40
 - email VARCHAR 50
-3. Créer une table location qui contiendra les colonnes suivantes :
+3. Créer une table locations qui contiendra les colonnes suivantes :
 - id INT auto incrementation
 - idclient INT
 - immatriculation VARCHAR 20
@@ -29,7 +29,7 @@
 - Insérer 3 clients différents
 - Insérer 2 locations différentes
 
-5. Créer un fichier bdd.php dans lequel on se connect à la base de donnée avec l'objet PDO en le stockant dans une variable :
+5. Créer un fichier bdd.php dans lequel on se connecte à la base de donnée avec l'objet PDO en le stockant dans une variable :
 ```php
     $pdo = new PDO('mysql:host=localhost;dbname=php-paris-lille', 'root', '');
 ```
