@@ -6,10 +6,14 @@ if (empty($_POST)) {
 
 include('bdd.php');
 
-foreach ($_POST as $key => $value) {
-    $_POST[$key] = htmlspecialchars($value);
-}
-
-$query = $pdo->prepare("INSERT INTO clients (nom, prenom, codepostal, localite, rue, numero, telephone, email) VALUES ('" . $_POST['nom'] . "', '" . $_POST['prenom'] . "', '" . $_POST['codepostal'] . "', '" . $_POST['localite'] . "', '" . $_POST['rue'] . "', '" . $_POST['numero'] . "', '" . $_POST['telephone'] . "', '" . $_POST['email'] . "')");
+$query = $pdo->prepare("INSERT INTO clients (nom, prenom, codepostal, localite, rue, numero, telephone, email) VALUES ('?', '?', '?', '?', '?', '?', '?', '?')");
+$query->bindParam(1, $_POST['nom']);
+$query->bindParam(2, $_POST['prenom']);
+$query->bindParam(3, $_POST['codepostal']);
+$query->bindParam(4, $_POST['localite']);
+$query->bindParam(5, $_POST['rue']);
+$query->bindParam(6, $_POST['numero']);
+$query->bindParam(7, $_POST['telephone']);
+$query->bindParam(8, $_POST['email']);
 $query->execute();
 header('location: formulaireClient.php');

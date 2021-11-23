@@ -6,10 +6,10 @@ if (empty($_POST)) {
 
 include('bdd.php');
 
-foreach ($_POST as $key => $value) {
-    $_POST[$key] = htmlspecialchars($value);
-}
-
-$query = $pdo->prepare("INSERT INTO voitures (immatriculation, marque, cylindree, dateachat) VALUES ('" . $_POST['immatriculation'] . "', '" . $_POST['marque'] . "', '" . $_POST['cylindree'] . "', '" . $_POST['dateachat'] . "')");
+$query = $pdo->prepare("INSERT INTO voitures (immatriculation, marque, cylindree, dateachat) VALUES ('?', '?', '?', '?')");
+$query->bindParam(1, $_POST['immatriculation']);
+$query->bindParam(2, $_POST['marque']);
+$query->bindParam(3, $_POST['cylindree']);
+$query->bindParam(4, $_POST['dateachat']);
 $query->execute();
 header('location: formulaireVoiture.php');
