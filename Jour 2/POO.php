@@ -9,5 +9,9 @@ $voiture2 = new Voiture ('Mercedes', '90', '45IKJD95', '10-16-2018');
 // var_dump($voiture1);
 // echo '</pre>';
 
-$voiture1->accélérer();
-$voiture2->accélérer();
+// $voiture1->accélérer();
+// $voiture2->accélérer();
+
+echo $voiture1->getMarque();
+
+var_dump($voiture1);

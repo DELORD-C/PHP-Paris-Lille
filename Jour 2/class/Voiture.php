@@ -1,12 +1,12 @@
 <?php
 
 class Voiture {
-    public $marque;
-    public $cylindree;
-    public $immatriculation;
-    public $dateachat;
+    private $marque;
+    private $cylindree;
+    private $immatriculation;
+    private $dateachat;
 
-    function __construct ($marque, $cylindree, $immatriculation, $dateachat)
+    function __construct (string $marque, $cylindree, $immatriculation, $dateachat)
     {
         $this->marque = $marque;
         $this->cylindree = $cylindree;
@@ -16,5 +16,13 @@ class Voiture {
 
     function accélérer() {
         echo "La " . $this->marque . " accélère.";
+    }
+
+    function setMarque (string $marque) {
+        $this->marque = $marque;
+    }
+
+    function getMarque () {
+        return $this->marque;
     }
 }
