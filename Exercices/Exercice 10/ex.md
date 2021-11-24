@@ -11,6 +11,7 @@
   - Attribut `int $force`
   - Attribut `int $intelligence`
   - Attribut `int $agilite`
+  - Methode `attaquer(Mortel $cible)` qui soustrait `$force` aux `$pointsDeVie` de `$cible`
 
 - Elfe qui hérite de Mortel :
   - Attribut `int $esquive`
@@ -43,7 +44,8 @@
   - Valeur par défaut de `$force` = 4
   - Valeur par défaut de `$intelligence` = 19
   - Valeur par défaut de `$agilite` = 7
-  - Methode `sheep($cible)` qui affiche "[Nom de la cible] est transformé en mouton !"
+  - Methode `sheep(Entite $cible)` qui affiche "[Nom de la cible] est transformé en mouton !"
+  - Surcharge de la méthode `attaquer(Mortel $cible)` qui soustrait `$intelligence` aux `$pointsDeVie` de `$cible`
 
-2. Créer les différents constructeurs, getters et setters
-3. Tester les différentes méthodes et attributs dans index.php
+1. Créer les différents constructeurs, getters et setters
+2. Tester les différentes méthodes et attributs dans index.php
