@@ -1,7 +1,5 @@
 # Exercice 9
 
-
-
 ## Considérons les deux classes Personne et Adresse.
 ### Les attributs de la classe Adresse sont :
 - `$rue` : un attribut privé de type chaîne de caractères.
