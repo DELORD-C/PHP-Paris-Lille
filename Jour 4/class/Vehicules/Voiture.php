@@ -1,5 +1,7 @@
 <?php
 
+namespace Vehicules;
+
 class Voiture implements Chassis {
     function roue1 () {
         echo 'pneu 1';

@@ -1,5 +1,7 @@
 <?php
 
+namespace Animaux;
+
 class Animal {
     function manger () {
         echo 'Miam';

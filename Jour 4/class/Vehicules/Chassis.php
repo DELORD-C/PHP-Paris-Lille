@@ -1,5 +1,7 @@
 <?php
 
+namespace Vehicules;
+
 interface Chassis {
     function roue1();
     function roue2();

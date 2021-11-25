@@ -1,7 +1,10 @@
 <?php
 
+use Animaux\Jaguar;
+
 include('class/Autoloader.php');
 
 // EXTENDS VS IMPLEMENTS
 
-$chien = new Chien();
+$chien = new Animaux\Animal;
+$jaguar1 = new Jaguar;
