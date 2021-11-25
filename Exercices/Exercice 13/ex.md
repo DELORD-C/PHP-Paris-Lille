@@ -8,7 +8,7 @@ pair(8) //retourne true
 pair(33) //retourne false
 ```
 
-1. Ecrire une fonction lettre(int $nb) qui prend un nombre entier positif inférieur à 10 en paramètre, elle retourne une chaîne de caractère correspondant au chiffre en toute lettre
+1. Ecrire une fonction lettre(int $nb) qui prend un nombre entier positif inférieur à 10 en paramètre, elle retourne une chaîne de caractère correspondant au chiffre en toute lettre. (Utiliser Switch)
 
 Exemple
 ```php
