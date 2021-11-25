@@ -1,37 +1,22 @@
 <?php
 
 class Affichage {
-
-    private $header;
-    private $footer;
-    private $disconnect;
-    private $filmsList;
-    private $formulaireConnection;
-
-    function __construct(string $titre)
-    {
-        $this->setHeader($titre);
-        $this->setFooter();
-        $this->setDisconnect();
-        $this->setFormulaireConnection();
-    }
-
-    function display (string $bloc) {
+    static function display (string $bloc) {
         switch ($bloc) {
             case 'Header':
-                echo $this->getHeader();
+                echo Affichage::getHeader();
                 break;
             case 'Footer':
-                echo $this->getFooter();
+                echo Affichage::getFooter();
                 break;
             case 'Connection':
-                echo $this->getFormulaireConnection();
+                echo Affichage::getConnection();
                 break;
             case 'Films':
-                echo $this->getFilmsList();
+                echo Affichage::getFilmsList();
                 break;
             case 'Disconnect':
-                echo $this->getDisconnect();
+                echo Affichage::getDisconnect();
                 break;
 
             default:     
@@ -39,33 +24,25 @@ class Affichage {
         }
     }
 
-    function setHeader (string $titre) {
-        $this->header = '<!DOCTYPE html>
+    static function getHeader () {
+        return '<!DOCTYPE html>
         <html lang="en">
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>' . $titre . '</title>
+            <title>My Ciné</title>
         </head>
         <body>';
     }
 
-    function getHeader () {
-        return $this->header;
-    }
-
-    function setFooter () {
-        $this->footer = '</body>
+    static function getFooter () {
+        return '</body>
         </html>';
     }
 
-    function getFooter () {
-        return $this->footer;
-    }
-
-    function setFormulaireConnection() {
-        $this->formulaireConnection = "
+    static function getConnection() {
+        return "
             <form method='post' action='home.php'>
                 <input type='text' name='email' placeholder='Email'>
                 <input type='password' name='password' placeholder='Password'>
@@ -74,33 +51,21 @@ class Affichage {
         ";
     }
 
-    function getFormulaireConnection() {
-        return $this->formulaireConnection;
-    }
-
-    function setFilmsList (Bdd $bdd) {
-        $films = $bdd->getFilmsList();
-        $this->filmsList = '<div class="films">';
+    static function getFilmsList () {
+        $films = Bdd::getFilmsList();
+        $filmList = '<div class="films">';
         foreach ($films as $index => $film) {
-            $this->filmsList .= "
+            $filmList .= "
                 <h2>" . $film['titre'] . "</h2>
                 <p>" . $film['realisateurs'] . "</p>
                 <p>" . $film['annee'] . "</p>
             ";
         }
-        $this->filmsList .= '</div>';
+        $filmList .= '</div>';
+        return $filmList;
     }
 
-    function getFilmsList () {
-        return $this->filmsList;
+    static function getDisconnect () {
+        return "<a href='?disconnect=true'>Déconnection</a>";
     }
-
-    function setDisconnect () {
-        $this->disconnect = "<a href='?disconnect=true'>Déconnection</a>";
-    }
-
-    function getDisconnect () {
-        return $this->disconnect;
-    }
-
 }

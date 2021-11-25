@@ -1,14 +1,12 @@
 <?php
 
 Class Bdd {
-    private $pdo;
-
-    function __construct () {
-        $this->pdo = new PDO('mysql:host=localhost;dbname=php-paris-lille', 'root', '');
+    static function getPDO () {
+        return new PDO('mysql:host=localhost;dbname=php-paris-lille', 'root', '');
     }
 
-    function checkPassword (string $email, string $password) {
-        $query = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
+    static function checkPassword (string $email, string $password) {
+        $query = Bdd::getPDO()->prepare("SELECT * FROM users WHERE email = ?");
         $query->bindParam(1, $email);
         $query->execute();
         $resultat = $query->fetch();
@@ -18,8 +16,8 @@ Class Bdd {
         return false;
     }
 
-    function getFilmsList () {
-        $query = $this->pdo->prepare("SELECT * FROM films");
+    static function getFilmsList () {
+        $query = Bdd::getPDO()->prepare("SELECT * FROM films");
         $query->execute();
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }

@@ -1,16 +1,11 @@
 <?php
 
 include('class/Autoloader.php');
-$affichage = new Affichage('Connection');
-$auth = new Auth();
-$bdd = new Bdd();
 
-if ($auth->isConnected($bdd)) {
+if (Auth::isConnected()) {
     header('location: home.php');
 }
 
-$affichage->display('Header');
-$affichage->display('Connection');
-$affichage->display('Footer');
-
-?>
+Affichage::display('Header');
+Affichage::display('Connection');
+Affichage::display('Footer');
