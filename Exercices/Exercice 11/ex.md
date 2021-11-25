@@ -11,3 +11,5 @@
         - Si oui : on connecte l'utilisateur
         - Sinon on redirige l'utilisateur vers index.php
       - Sinon on redirige l'utilisateur vers index.php
+
+Vous pouvez ou non utiliser la programmation orientée objet si vous le souhaitez.
