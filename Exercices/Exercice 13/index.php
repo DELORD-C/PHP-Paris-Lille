@@ -35,6 +35,6 @@ function lettre(int $nb) {
     }
 }
 
-var_dump(lettre(9))
+var_dump(lettre(9));
 var_dump(lettre(2));
 var_dump(lettre(11));
