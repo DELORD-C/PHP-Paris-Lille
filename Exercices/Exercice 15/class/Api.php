@@ -21,4 +21,28 @@ class Api {
         }
         return false;
     }
+
+    static function getMovieOverview (string $search) {
+        $search = preg_replace('/\s+/', '%20', $search);
+        $data = json_decode(file_get_contents('https://api.themoviedb.org/3/search/movie?api_key=625b3e1220c0fca7c7ac7f6fcca786ac&language=fr-FR&query=' . $search));
+        if (!empty($data->results)) {
+            if ($data->results[0]->overview != null) {
+                return $data->results[0]->overview;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    static function getMovieVote (string $search) {
+        $search = preg_replace('/\s+/', '%20', $search);
+        $data = json_decode(file_get_contents('https://api.themoviedb.org/3/search/movie?api_key=625b3e1220c0fca7c7ac7f6fcca786ac&language=fr-FR&query=' . $search));
+        if (!empty($data->results)) {
+            if ($data->results[0]->vote_average != null) {
+                return $data->results[0]->vote_average . "/10";
+            }
+            return false;
+        }
+        return false;
+    }
 }

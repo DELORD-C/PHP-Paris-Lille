@@ -59,6 +59,8 @@ class Affichage {
                 <h2>" . $film['titre'] . "</h2>
                 <p>" . $film['realisateurs'] . "</p>
                 <p>" . $film['annee'] . "</p>
+                <p>" . Api::getMovieOverview($film['titre']) . "</p>
+                <p>" . Api::getMovieVote($film['titre']) . "</p>
                 <img src=" . Api::getMoviePoster($film['titre']) . ">
             ";
         }

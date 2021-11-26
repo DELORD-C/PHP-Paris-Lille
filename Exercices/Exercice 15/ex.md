@@ -7,4 +7,4 @@ Sur home.php, en plus des images déjà affichées, afficher la description de t
 ```php
 Api::getMovieDetails($titre)
 ```
-2. Créer des nouvelles méthodes dans la classe `Api`
+1. Créer des nouvelles méthodes dans la classe `Api`
